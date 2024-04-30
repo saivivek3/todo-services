@@ -31,7 +31,7 @@ const Todo = mongoose.model(
     text: String,
     completed: Boolean,
   },
-  { timestamps: true }
+  { timestamps: {} }
 );
 
 // Routes
