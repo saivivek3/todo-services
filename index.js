@@ -25,15 +25,16 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Todo model
-const Todo = mongoose.model(
-  "Todo",
+const TodoSchema = new mongoose.Schema(
   {
     text: String,
     completed: Boolean,
   },
-  { timestamps: {} }
+  {
+    timestamps: true,
+  }
 );
-
+const Todo = mongoose.model("Todo", TodoSchema);
 // Routes
 // Get all todos
 app.get("/todos", async (req, res) => {
